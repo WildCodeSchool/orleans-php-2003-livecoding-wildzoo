@@ -75,7 +75,7 @@ Create a repository on Github in WildCodeSchool organization following this exem
 
 ### Working
 
-1. Run `php bin/console server:run` to launch your local php web server
+1. Run `symfony server:start` to launch your local php web server
 2. Run `yarn run dev --watch` to launch your local server for assets
 
 ### Testing
