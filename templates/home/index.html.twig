@@ -3,5 +3,19 @@
 {% block title %}WildZoo | Accueil{% endblock %}
 
 {% block body %}
+    <section class="container-fluid">
+        <h2>Nos animaux</h2>
+        <div class="row">
+        {% for animal in animals %}
+            <div class="col-md-4 col-sm-6">
+                <figure class="card">
+                    <figcaption class="card-body">
+                        <h3>{{ animal.name }}</h3>
+                    </figcaption>
+                </figure>
+            </div>
+        {% endfor %}
+        </div>
+    </section>
 
 {% endblock %}
