@@ -1,4 +1,15 @@
-$primary-color: #f76c6c;
-$secondary-color: #f99797;
-$light: #F6FFF5;
-$warm-color: #ffd64f;
+$primary-color: #036601;
+$primary-color-light:lighten($primary-color, 20%);
+$primary-color-dark:darken($primary-color, 20%);
+
+$secondary-color: #C1DA86;
+$secondary-color-light:lighten($secondary-color, 20%);
+$secondary-color-dark:darken($secondary-color, 20%);
+
+$light: #FAFFFA;
+$dark: #001500;
+$shadow: #A8A59F;
+
+$main-font: 'M PLUS Rounded 1c', sans-serif;
+$title-font: 'Sirin Stencil', cursive;
+

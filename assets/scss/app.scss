@@ -1,10 +1,24 @@
 @import "vars";
+$theme-colors: (
+        "primary": $primary-color,
+        "secondary": $secondary-color,
+);
 @import "~bootstrap/scss/bootstrap";
+@import "navbar";
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;400;700&family=Sirin+Stencil&display=swap');
+
+
 
 body {
     background-color: $light;
+    font-family: $main-font;
+}
+
+h1, h2 {
+    font-family: $main-font;
 }
 
 a {
-    color: $warm-color;
+    color: $dark;
 }

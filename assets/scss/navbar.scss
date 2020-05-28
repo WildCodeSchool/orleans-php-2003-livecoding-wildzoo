@@ -1,0 +1,11 @@
+.navbar {
+  a {
+    &:any-link {
+      color: $light;
+    }
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}

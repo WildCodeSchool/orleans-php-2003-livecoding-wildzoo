@@ -1,6 +1,18 @@
-<nav>
-    Wild zoo
-    <a href="#">Le parc</a>
-    <a href="#">Les animaux</a>
-    <a href="#">Les activité</a>
+<nav class="navbar navbar-expand-lg fixed-top">
+    <a class="navbar-brand" href="#">
+        <img src="{{ asset('build/images/logo.png') }}" alt="logo" class="logo"/>
+        WildZoo
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav ">
+            <a class="nav-item nav-link" href="#">Le parc</a>
+            <a class="nav-item nav-link" href="#">Les animaux</a>
+            <a class="nav-item nav-link" href="#">Les activités</a>
+            <a class="nav-item nav-link" href="#">Informations pratiques</a>
+            <a class="btn btn-primary nav-item nav-link" href="#">Acheter un billet</a>
+        </div>
+    </div>
 </nav>
