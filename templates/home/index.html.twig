@@ -11,6 +11,7 @@
                 <figure class="card">
                     <figcaption class="card-body">
                         <h3>{{ animal.name }}</h3>
+                        <a href="{{ path('animal_show', {'id': animal.id}) }}" class="btn-outline-primary">Voir plus</a>
                     </figcaption>
                 </figure>
             </div>
