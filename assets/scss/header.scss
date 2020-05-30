@@ -1,0 +1,18 @@
+@import "vars";
+.home-header {
+  height: 100vh;
+  background-image: url('../images/header.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  h1 {
+    font-size:150pt;
+    color:$light;
+    text-shadow: 1px 1px 5px $dark;
+  }
+  p {
+    background-color: transparentize($dark, 0.5);
+    font-size: 22pt;
+    color:$light;
+  }
+}

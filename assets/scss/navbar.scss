@@ -1,11 +1,19 @@
 .navbar {
+  .navbar-brand {
+    font-family: $title-font;
+    font-size: 22pt;
+  }
   a {
+    margin-right: 1em;
     &:any-link {
       color: $light;
+      font-size: 16pt;
     }
 
     &:hover {
       color: $secondary-color;
     }
   }
+
+
 }

@@ -2,6 +2,16 @@
 
 {% block title %}WildZoo | Accueil{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('home') }}
+{% endblock %}
+
+{% block header %}
+    {{ parent() }}
+    {% include 'home/_header.html.twig' %}
+{% endblock %}
+
 {% block body %}
     <section class="container-fluid">
         <h2>Nos animaux</h2>
