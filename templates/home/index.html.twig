@@ -13,15 +13,16 @@
 {% endblock %}
 
 {% block body %}
-    <section class="container-fluid">
-        <h2>Nos animaux</h2>
+    <section class="container-fluid animals">
+        <h2 class="mt-5 mb-3">Nos animaux</h2>
         <div class="row">
         {% for animal in animals %}
             <div class="col-md-4 col-sm-6">
                 <figure class="card">
+                    <img src="{{ asset(animal.image is defined ? : 'build/images/animal-placeholder.png') }}" class="card-img-top" alt="no-animal-picture">
                     <figcaption class="card-body">
                         <h3>{{ animal.name }}</h3>
-                        <a href="{{ path('animal_show', {'id': animal.id}) }}" class="btn-outline-primary">Voir plus</a>
+                        <a href="{{ path('animal_show', {'id': animal.id}) }}" class="btn btn-outline-secondary">Voir plus</a>
                     </figcaption>
                 </figure>
             </div>
