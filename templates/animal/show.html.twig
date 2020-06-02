@@ -1,10 +1,22 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
-{% block title %}Hello AnimalController!{% endblock %}
+{% block title %}Wild Zoo | {{ animal.name|title }}{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('animal') }}
+{% endblock %}
 
 {% block body %}
-    <main class="container-fluid">
-        <h1>{{ animal.name }}</h1>
-        <p>{{ animal.description }}</p>
+    <main class="container-fluid animal">
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="{{ asset(animal.image is defined ? 'build/uploads/images/' ~ animal.image : 'build/images/animal-placeholder.png') }}"
+                     class="" alt="no-animal-picture">
+            </div>
+        <div class="col-sm-6">
+            <h1 class="mt-2">{{ animal.name|title }}</h1>
+            <p class="mt-4">{{ animal.description|nl2br }}</p>
+        </div>
+        </div>
     </main>
 {% endblock %}

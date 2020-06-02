@@ -13,6 +13,7 @@ $theme-colors: (
 body {
     background-color: $light;
     font-family: $main-font;
+    padding-top: $navbar-height;
 }
 
 h1, h2 {
@@ -21,4 +22,9 @@ h1, h2 {
 
 a {
     color: $dark;
+}
+
+.navbar {
+    height: $navbar-height;
+    background-color: $dark;
 }

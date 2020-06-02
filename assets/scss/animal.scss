@@ -1,0 +1,10 @@
+@import 'header';
+
+.animal {
+  padding-left: 0;
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 75vh;
+  }
+}

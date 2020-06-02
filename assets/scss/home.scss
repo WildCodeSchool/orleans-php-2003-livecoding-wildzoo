@@ -1,7 +1,14 @@
 @import 'header';
 
-.animals {
+body {
+  padding-top: 0;
+}
 
+.navbar {
+  background-color: transparent;
+}
+
+.animals {
   .card {
     text-align:center;
     position: relative;
