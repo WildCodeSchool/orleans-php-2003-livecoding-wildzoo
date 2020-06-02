@@ -13,10 +13,10 @@
                 <img src="{{ asset(animal.image is defined ? 'build/uploads/images/' ~ animal.image : 'build/images/animal-placeholder.png') }}"
                      class="" alt="no-animal-picture">
             </div>
-        <div class="col-sm-6">
-            <h1 class="mt-2">{{ animal.name|title }}</h1>
-            <p class="mt-4">{{ animal.description|nl2br }}</p>
-        </div>
+            <div class="col-sm-6">
+                <h1 class="mt-2">{{ animal.name|title }}</h1>
+                <p class="mt-4">{{ animal.description|nl2br }}</p>
+            </div>
         </div>
     </main>
 {% endblock %}

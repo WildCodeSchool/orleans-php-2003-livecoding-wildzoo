@@ -1,0 +1,11 @@
+<div class="col-md-4 col-sm-6">
+    <a href="{{ path('animal_show', {'id': animal.id}) }}">
+        <figure class="card">
+            <img src="{{ asset(animal.image is defined ? 'build/uploads/images/' ~ animal.image : 'build/images/animal-placeholder.png') }}" class="card-img-top" alt="no-animal-picture">
+            <figcaption class="card-body">
+                <h3>{{ animal.name }}</h3>
+                <button class="btn btn-outline-secondary">Voir plus</button>
+            </figcaption>
+        </figure>
+    </a>
+</div>

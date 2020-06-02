@@ -5,6 +5,7 @@
 {% block stylesheets %}
     {{ parent() }}
     {{ encore_entry_link_tags('home') }}
+    {{ encore_entry_link_tags('animals') }}
 {% endblock %}
 
 {% block header %}
@@ -13,21 +14,17 @@
 {% endblock %}
 
 {% block body %}
-    <section class="container-fluid animals">
+    <section class="container-fluid animals py-5">
         <h2 class="mt-5 mb-3">Nos animaux</h2>
         <div class="row">
         {% for animal in animals %}
-            <div class="col-md-4 col-sm-6">
-                <figure class="card">
-                    <img src="{{ asset(animal.image is defined ? 'build/uploads/images/' ~ animal.image : 'build/images/animal-placeholder.png') }}" class="card-img-top" alt="no-animal-picture">
-                    <figcaption class="card-body">
-                        <h3>{{ animal.name }}</h3>
-                        <a href="{{ path('animal_show', {'id': animal.id}) }}" class="btn btn-outline-secondary">Voir plus</a>
-                    </figcaption>
-                </figure>
-            </div>
+            {% include 'animal/_card.html.twig' %}
         {% endfor %}
         </div>
+        <div class="row justify-content-center">
+            <a class="btn btn-lg btn-outline-primary" href="{{ path('animal_index') }}">Tous nos animaux</a>
+        </div>
+
     </section>
 
 {% endblock %}
