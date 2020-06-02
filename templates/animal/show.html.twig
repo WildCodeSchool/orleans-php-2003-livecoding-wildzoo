@@ -15,6 +15,7 @@
             </div>
             <div class="col-sm-6">
                 <h1 class="mt-2">{{ animal.name|title }}</h1>
+                <div class="badge badge-primary">{{ animal.area.name ?? '' }}</div>
                 <p class="mt-4">{{ animal.description|nl2br }}</p>
             </div>
         </div>

@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Animal;
+use App\Entity\Area;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -20,6 +22,11 @@ class AnimalType extends AbstractType
                 ]
             ])
             ->add('description', TextareaType::class)
+            ->add('area', EntityType::class, [
+                'class' => Area::class,
+                'choice_label' => 'name',
+                'label' => 'Zone',
+            ])
         ;
     }
 

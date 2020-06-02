@@ -37,6 +37,11 @@ class Animal
      */
     private $description;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Area::class, inversedBy="animals")
+     */
+    private $area;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -62,6 +67,18 @@ class Animal
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getArea(): ?Area
+    {
+        return $this->area;
+    }
+
+    public function setArea(?Area $area): self
+    {
+        $this->area = $area;
 
         return $this;
     }
