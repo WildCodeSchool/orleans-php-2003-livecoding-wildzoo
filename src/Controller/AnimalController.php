@@ -33,4 +33,6 @@ class AnimalController extends AbstractController
             'animals' => $animalRepository->findBy([], ['name'=>'ASC']),
         ]);
     }
+
+
 }
