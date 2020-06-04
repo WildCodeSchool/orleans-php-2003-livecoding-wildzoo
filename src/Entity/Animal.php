@@ -19,21 +19,14 @@ class Animal
 
     /**
      * @ORM\Column(type="string", length=100)
-     * @Assert\NotBlank(
-     *     message="Le nom de l'animal est obligatoire"
-     * )
-     * @Assert\Length(
-     *     max = 100,
-     *     maxMessage = "Le nom de l'animal ne doit pas faire plus de {{ limit }} caractères",
-     * )
+     * @Assert\NotBlank()
+     * @Assert\Length(max = 100)
      */
     private $name;
 
     /**
      * @ORM\Column(type="text")
-     * @Assert\NotBlank(
-     *     message="La description de l'animal est obligatoire"
-     * )
+     * @Assert\NotBlank()
      */
     private $description;
 
