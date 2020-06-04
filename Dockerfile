@@ -80,9 +80,6 @@ RUN mkdir -p /etc/nginx/sites-enabled
 RUN chmod -R 777 /var/www/public
 #RUN php bin/console cache:clear
 
-RUN if [ ${APP_ENV} = "test" ] ; then php bin/console doctrine:fixtures:load --no-interaction ; fi
-RUN if [ ${APP_ENV} = "prod" ] ; then php bin/console doctrine:migrations:migrate --no-interaction ; else php bin/console doctrine:schema:update --force ; fi
-
 # Expose port 80 and start php-fpm server
 EXPOSE 80
 CMD ["/docker-entry.sh"]
