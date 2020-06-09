@@ -15,6 +15,18 @@
 
 {% block body %}
     <section class="container-fluid animals py-5">
+        <h2 class="mt-5 mb-3">Nos activités</h2>
+        <div class="row">
+        {% for activity in activities %}
+            {% include 'activity/_card.html.twig' %}
+        {% endfor %}
+        </div>
+        <div class="row justify-content-center">
+            <a class="btn btn-lg btn-outline-primary" href="#">Toutes nos activités</a>
+        </div>
+    </section>
+
+    <section class="container-fluid animals py-5">
         <h2 class="mt-5 mb-3">Nos animaux</h2>
         <div class="row">
         {% for animal in animals %}
@@ -24,7 +36,6 @@
         <div class="row justify-content-center">
             <a class="btn btn-lg btn-outline-primary" href="{{ path('animal_index') }}">Tous nos animaux</a>
         </div>
-
     </section>
 
 {% endblock %}
