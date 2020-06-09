@@ -64,7 +64,19 @@ class AdminAnimalController extends AbstractController
         }
 
         return $this->render('admin_animal/edit.html.twig', [
+            'animal' => $animal,
             'form' => $form->createView(),
         ]);
+    }
+
+    /**
+     * @Route("/delete/{id}", name="delete", methods="POST")
+     */
+    public function delete(Animal $animal, EntityManagerInterface $entityManager): Response
+    {
+        $entityManager->remove($animal);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('admin_animal_index');
     }
 }

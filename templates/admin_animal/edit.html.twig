@@ -5,7 +5,12 @@
 
 {% block body %}
     <main class="container">
+
         <h1>Editer un animal</h1>
+
+        <form method="POST" action="{{ path('admin_animal_delete', {'id': animal.id}) }}">
+            <button class="btn btn-danger">Supprimer</button>
+        </form>
 
         {{ form_start(form) }}
 
