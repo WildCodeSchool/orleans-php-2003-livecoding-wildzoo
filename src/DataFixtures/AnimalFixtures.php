@@ -9,12 +9,16 @@ use Faker\Factory;
 
 class AnimalFixtures extends Fixture
 {
+    const ANIMALS = [
+        'Pangolin', 'Lion', 'Elephant', 'Chauve-souris', 'Castor', 'Ornithorynque', 'Dragon', 'Aigle', 'Requin'
+    ];
+
     public function load(ObjectManager $manager)
     {
         $faker = Factory::create();
-        for ($i = 0; $i < 20; $i++) {
+        foreach (self::ANIMALS as $animalName) {
             $animal = new Animal();
-            $animal->setName($faker->word());
+            $animal->setName($animalName);
             $animal->setDescription($faker->paragraph());
             $manager->persist($animal);
         }
