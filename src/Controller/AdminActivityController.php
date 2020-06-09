@@ -26,7 +26,7 @@ class AdminActivityController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="new", methods={"GET","POST"})
+     * @Route("/nouveau", name="new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {

@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 
-{% block title %}New Activity{% endblock %}
+{% block title %}Ajouter Activité{% endblock %}
 
 {% block body %}
-    <h1>Create new Activity</h1>
+    <main class="container-fluid">
+        <h1>Ajouter une activité</h1>
 
-    {{ include('admin_activity/_form.html.twig') }}
+        {{ include('admin_activity/_form.html.twig') }}
 
-    <a href="{{ path('admin_activity_index') }}">back to list</a>
+        <a class="mt-4 btn btn-outline-secondary" href="{{ path('admin_activity_index') }}">Retour</a>
+    </main>
 {% endblock %}
