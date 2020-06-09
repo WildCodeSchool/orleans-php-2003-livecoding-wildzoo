@@ -13,7 +13,7 @@ class ActivityFixtures extends Fixture
     {
         $faker = Factory::create();
 
-        for($i=0; $i<20; $i++) {
+        for ($i = 0; $i < 20; $i++) {
             $activity = new Activity();
             $manager->persist($activity);
             $activity->setName($faker->sentence(3));
