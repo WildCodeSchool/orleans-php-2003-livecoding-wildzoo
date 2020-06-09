@@ -1,0 +1,26 @@
+{% extends 'admin_layout.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}Wild Zoo Admin | Editer Animal{% endblock %}
+
+{% block body %}
+    <main class="container">
+        <h1>Editer un animal</h1>
+
+        {{ form_start(form) }}
+
+        <div class="form-group">
+            {{ form_label(form.name, 'Nom') }}
+            {{ form_widget(form.name) }}
+        </div>
+
+        {{ form_row(form.description) }}
+
+        {{ form_row(form.area) }}
+
+        <button class="btn btn-primary">Editer</button>
+        {{ form_end(form) }}
+
+        <a class="mt-4 btn btn-outline-primary" href="{{ path('admin_animal_index') }}">Retour</a>
+    </main>
+{% endblock %}

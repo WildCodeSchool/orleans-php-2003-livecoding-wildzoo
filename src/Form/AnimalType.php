@@ -26,6 +26,7 @@ class AnimalType extends AbstractType
                 'class' => Area::class,
                 'choice_label' => 'name',
                 'label' => 'Zone',
+                'required' => false,
             ])
         ;
     }

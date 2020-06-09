@@ -41,10 +41,29 @@ class AdminAnimalController extends AbstractController
             $entityManager->persist($animal);
             $entityManager->flush();
 
-            return $this->redirectToRoute('animal_index');
+            return $this->redirectToRoute('admin_animal_index');
         }
 
         return $this->render('admin_animal/add.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/edit/{id}", name="edit")
+     */
+    public function edit(Request $request, Animal $animal, EntityManagerInterface $entityManager): Response
+    {
+        $form = $this->createForm(AnimalType::class, $animal);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->flush();
+
+            return $this->redirectToRoute('admin_animal_index');
+        }
+
+        return $this->render('admin_animal/edit.html.twig', [
             'form' => $form->createView(),
         ]);
     }

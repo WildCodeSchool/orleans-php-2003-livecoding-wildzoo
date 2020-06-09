@@ -15,7 +15,7 @@
             <tbody>
             {% for animal in animals %}
             <tr>
-                <td>{{ animal.name }}</td>
+                <td><a href="{{ path('admin_animal_edit', {'id':animal.id}) }}">{{ animal.name }}</a></td>
                 <td>{{ animal.area.name ?? ''}}</td>
             </tr>
             {% else %}
