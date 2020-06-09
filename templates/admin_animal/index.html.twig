@@ -1,0 +1,27 @@
+{% extends 'admin_layout.html.twig' %}
+
+{% block title %}Wild Zoo Admin | Index Animal{% endblock %}
+
+{% block body %}
+    <main class="container">
+        <h1>Administrer un animal</h1>
+        <table class="mt-5 table table-hover ">
+            <thead>
+                <tr class="table-primary">
+                    <th>Name</th>
+                    <th>Area</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for animal in animals %}
+            <tr>
+                <td>{{ animal.name }}</td>
+                <td>{{ animal.area.name ?? ''}}</td>
+            </tr>
+            {% else %}
+                <tr><td colspan="2">Pas d'animaux pour le moment</td></tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </main>
+{% endblock %}
