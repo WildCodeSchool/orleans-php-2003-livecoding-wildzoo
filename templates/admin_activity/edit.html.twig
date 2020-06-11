@@ -1,13 +1,17 @@
 {% extends 'admin_layout.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 {% block title %}Edit Activity{% endblock %}
 
 {% block body %}
-    <h1>Edit Activity</h1>
+    <main class="container">
+        <h1 class="mb-4">Modifier l'activité {{ activity.name }}</h1>
 
-    {{ include('admin_activity/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('admin_activity/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('admin_activity_index') }}">back to list</a>
-
-    {{ include('admin_activity/_delete_form.html.twig') }}
+        <div class="mt-4">
+            {{ include('admin_activity/_delete_form.html.twig') }}
+        </div>
+        <a class="btn btn-outline-primary mt-4" href="{{ path('admin_activity_index') }}">Retour</a>
+    </main>
 {% endblock %}
