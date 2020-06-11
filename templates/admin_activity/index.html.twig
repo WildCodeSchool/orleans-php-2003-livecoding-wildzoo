@@ -1,16 +1,18 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin_layout.html.twig' %}
 
 {% block title %}Activity index{% endblock %}
 
 {% block body %}
-    <main class="container-fluid">
+    <main class="container">
+        <div class="d-flex justify-content-between">
+            <h1>Administrer une activité</h1>
+            <a class="align-self-end btn btn-primary" href="{{ path('admin_activity_new') }}">Ajouter une activité</a>
+        </div>
 
-    <h1>Activity index</h1>
-
-    <table class="table table-hover">
-        <thead class="thead-dark">
+    <table class="mt-5 table table-hover">
+        <thead class="table-primary text-light">
             <tr>
-                <th>Name</th>
+                <th>Activity</th>
                 <th></th>
             </tr>
         </thead>
@@ -18,7 +20,7 @@
         {% for activity in activities %}
             <tr>
                 <td>{{ activity.name }}</td>
-                <td>
+                <td class="text-right">
                     <a class="btn btn-outline-primary" href="{{ path('admin_activity_edit', {'id': activity.id}) }}">edit</a>
                 </td>
             </tr>
@@ -30,7 +32,7 @@
         </tbody>
     </table>
 
-    <a class="btn btn-primary" href="{{ path('admin_activity_new') }}">Ajouter une activité</a>
+    <a class="mt-4 btn btn-primary" href="{{ path('admin_activity_new') }}">Ajouter une activité</a>
     </main>
 
 {% endblock %}

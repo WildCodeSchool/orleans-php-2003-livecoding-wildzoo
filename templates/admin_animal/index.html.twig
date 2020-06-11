@@ -4,24 +4,32 @@
 
 {% block body %}
     <main class="container">
-        <h1>Administrer un animal</h1>
+        <div class="d-flex justify-content-between">
+            <h1>Administrer un animal</h1>
+            <a class="align-self-end btn btn-primary" href="{{ path('admin_animal_add') }}">Ajouter une animal</a>
+        </div>
+
         <table class="mt-5 table table-hover ">
-            <thead>
-                <tr class="table-primary">
+            <thead class="table-primary text-light">
+                <tr>
                     <th>Name</th>
                     <th>Area</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
             {% for animal in animals %}
             <tr>
-                <td><a href="{{ path('admin_animal_edit', {'id':animal.id}) }}">{{ animal.name }}</a></td>
+                <td>{{ animal.name }}</td>
                 <td>{{ animal.area.name ?? ''}}</td>
+                <td class="text-right"><a class="btn btn-outline-primary" href="{{ path('admin_animal_edit', {'id':animal.id}) }}">Editer</a></td>
             </tr>
             {% else %}
                 <tr><td colspan="2">Pas d'animaux pour le moment</td></tr>
             {% endfor %}
             </tbody>
         </table>
+        <a class="mt-4 btn btn-primary" href="{{ path('admin_animal_add') }}">Ajouter une animal</a>
+
     </main>
 {% endblock %}

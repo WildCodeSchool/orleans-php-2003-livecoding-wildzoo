@@ -5,7 +5,7 @@
 
 {% block body %}
     <main class="container">
-        <h1>Ajouter un animal</h1>
+        <h1 class="mb-4">Ajouter un animal</h1>
 
         {{ form_start(form) }}
 
@@ -20,5 +20,8 @@
 
         <button class="btn btn-primary">Ajouter</button>
         {{ form_end(form) }}
+
+        <a class="btn btn-outline-primary mt-4" href="{{ path('admin_animal_index') }}">Retour</a>
+
     </main>
 {% endblock %}
