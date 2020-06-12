@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Wild Zoo | {{ activity.name|title }}{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('animal') }}
+{% endblock %}
+
+{% block body %}
+    <main class="container-fluid animal">
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="{{ asset(activity.image is defined ? 'build/uploads/images/' ~ activity.image : 'build/images/activity-placeholder.png') }}"
+                     class="" alt="no-activity-picture">
+            </div>
+            <div class="col-sm-6">
+                <h1 class="mt-2">{{ activity.name|title }}</h1>
+                <p class="mt-4">{{ activity.description|nl2br }}</p>
+            </div>
+        </div>
+    </main>
+{% endblock %}

@@ -1,5 +1,5 @@
 <div class="col-md-4 col-sm-6">
-    <a href="#">
+    <a href="{{ path('activity_show', {'id': activity.id}) }}">
         <figure class="card">
             <img src="{{ asset(activity.image is defined ? 'build/uploads/images/' ~ activity.image : 'build/images/activity-placeholder.png') }}" class="card-img-top" alt="no-activity-picture">
             <figcaption class="card-body">
