@@ -4,11 +4,9 @@
 {% block title %}Ajouter Activité{% endblock %}
 
 {% block body %}
-    <main class="container">
-        <h1 class="mb-4">Ajouter une activité</h1>
+    <h1 class="mb-4">Ajouter une activité</h1>
 
-        {{ include('admin_activity/_form.html.twig') }}
+    {{ include('admin_activity/_form.html.twig') }}
 
-        <a class="mt-4 btn btn-outline-primary" href="{{ path('admin_activity_index') }}">Retour</a>
-    </main>
+    <a class="mt-4 btn btn-outline-primary" href="{{ path('admin_activity_index') }}">Retour</a>
 {% endblock %}

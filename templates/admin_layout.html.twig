@@ -1,5 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    {# navbar visiteur #}
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('admin') }}
+{% endblock %}
+
+{% block main %}
+    <main class="d-flex justify-content-between">
+        {% include 'includes/_navbar_admin.html.twig' %}
+
+        <div class="flex-grow-1 px-5 py-3">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </main>
 {% endblock %}

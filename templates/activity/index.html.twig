@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Wild Zoo | Nos animaux{% endblock %}
+{% block title %}Wild Zoo | Nos activités{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
     {{ encore_entry_link_tags('animals') }}
@@ -8,10 +8,10 @@
 
 {% block body %}
     <main class="container-fluid animals">
-        <h1 class="my-2">Nos animaux</h1>
+        <h1 class="my-2">Nos activités</h1>
         <div class="row">
-            {% for animal in animals %}
-                {% include 'animal/_card.html.twig' %}
+            {% for activity in activities %}
+                {% include 'activity/_card.html.twig' %}
             {% endfor %}
         </div>
         <a class="btn btn-outline-primary" href="{{ path('home') }}">Retour</a>

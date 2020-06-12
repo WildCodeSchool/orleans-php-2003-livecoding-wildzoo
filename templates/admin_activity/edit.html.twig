@@ -4,14 +4,12 @@
 {% block title %}Edit Activity{% endblock %}
 
 {% block body %}
-    <main class="container">
-        <h1 class="mb-4">Modifier l'activité</h1>
+    <h1 class="mb-4">Modifier l'activité</h1>
 
-        {{ include('admin_activity/_form.html.twig', {'button_label': 'Editer'}) }}
+    {{ include('admin_activity/_form.html.twig', {'button_label': 'Editer'}) }}
 
-        <div class="d-flex justify-content-end mt-4 ">
-            {{ include('admin_activity/_delete_form.html.twig') }}
-        </div>
-        <a class="btn btn-outline-primary mt-4" href="{{ path('admin_activity_index') }}">Retour</a>
-    </main>
+    <div class="d-flex justify-content-end mt-4 ">
+        {{ include('admin_activity/_delete_form.html.twig') }}
+    </div>
+    <a class="btn btn-outline-primary mt-4" href="{{ path('admin_activity_index') }}">Retour</a>
 {% endblock %}

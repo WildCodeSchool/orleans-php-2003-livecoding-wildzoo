@@ -1,6 +1,7 @@
 <div class="col-md-4 col-sm-6">
     <a href="#">
         <figure class="card">
+            <img src="{{ asset(activity.image is defined ? 'build/uploads/images/' ~ activity.image : 'build/images/activity-placeholder.png') }}" class="card-img-top" alt="no-activity-picture">
             <figcaption class="card-body">
                 <h3>{{ activity.name }}</h3>
                 <button class="btn btn-outline-secondary">Voir plus</button>

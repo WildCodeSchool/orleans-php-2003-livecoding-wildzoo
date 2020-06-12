@@ -4,24 +4,21 @@
 {% block title %}Wild Zoo Admin | Add Animal{% endblock %}
 
 {% block body %}
-    <main class="container">
-        <h1 class="mb-4">Ajouter un animal</h1>
+    <h1 class="mb-4">Ajouter un animal</h1>
 
-        {{ form_start(form) }}
+    {{ form_start(form) }}
 
-        <div class="form-group">
-            {{ form_label(form.name, 'Nom') }}
-            {{ form_widget(form.name) }}
-        </div>
+    <div class="form-group">
+        {{ form_label(form.name, 'Nom') }}
+        {{ form_widget(form.name) }}
+    </div>
 
-        {{ form_row(form.description) }}
+    {{ form_row(form.description) }}
 
-        {{ form_row(form.area) }}
+    {{ form_row(form.area) }}
 
-        <button class="btn btn-primary">Ajouter</button>
-        {{ form_end(form) }}
+    <button class="btn btn-primary">Ajouter</button>
+    {{ form_end(form) }}
 
-        <a class="btn btn-outline-primary mt-4" href="{{ path('admin_animal_index') }}">Retour</a>
-
-    </main>
+    <a class="btn btn-outline-primary mt-4" href="{{ path('admin_animal_index') }}">Retour</a>
 {% endblock %}

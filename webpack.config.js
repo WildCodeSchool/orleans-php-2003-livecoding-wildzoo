@@ -32,6 +32,7 @@ Encore
     .addStyleEntry('home', './assets/scss/home.scss')
     .addStyleEntry('animal', './assets/scss/animal.scss')
     .addStyleEntry('animals', './assets/scss/animals.scss')
+    .addStyleEntry('admin', './assets/scss/admin.scss')
     //.addEntry('page2', './assets/js/page2.js')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
