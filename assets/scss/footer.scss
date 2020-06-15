@@ -1,0 +1,14 @@
+.footer {
+  background-image: url('../images/footer.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:$light;
+  a {
+      color:$light;
+  }
+
+  iframe {
+    width: 50%;
+    height: 300px;
+  }
+}
