@@ -8,3 +8,24 @@ body {
   background-color: transparent;
 }
 
+.home-catchline {
+  background-image: url('../images/catchline_home.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $light;
+  padding-top:6em;
+  padding-bottom:6em;
+  position: relative;
+
+  .lion {
+    position: absolute;
+    top: -50%;
+    right: 50px;
+  }
+
+  h2 {
+    background-color: transparentize($dark, 0.5);
+    color:$light;
+    display: inline-block;
+  }
+}
