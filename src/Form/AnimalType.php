@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class AnimalType extends AbstractType
 {
@@ -27,6 +28,9 @@ class AnimalType extends AbstractType
                 'choice_label' => 'name',
                 'label' => 'Zone',
                 'required' => false,
+            ])
+            ->add('imageFile', VichImageType::class, [
+                'help'=>'Fichier jpeg ou png de 2M max'
             ])
         ;
     }

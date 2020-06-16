@@ -59,7 +59,6 @@ class AdminAnimalController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
-
             return $this->redirectToRoute('admin_animal_index');
         }
 
