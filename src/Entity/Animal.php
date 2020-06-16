@@ -67,6 +67,11 @@ class Animal
      */
     private $area;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isFocus;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -141,5 +146,17 @@ class Animal
     public function setImageName(?string $imageName): void
     {
         $this->imageName = $imageName;
+    }
+
+    public function getIsFocus(): ?bool
+    {
+        return $this->isFocus;
+    }
+
+    public function setIsFocus(bool $isFocus): self
+    {
+        $this->isFocus = $isFocus;
+
+        return $this;
     }
 }

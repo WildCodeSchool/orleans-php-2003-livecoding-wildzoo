@@ -13,6 +13,7 @@
         <tr>
             <th>Name</th>
             <th>Area</th>
+            <th>Is focus</th>
             <th></th>
         </tr>
         </thead>
@@ -21,6 +22,7 @@
             <tr>
                 <td>{{ animal.name }}</td>
                 <td>{{ animal.area.name ?? '' }}</td>
+                <td>{{ animal.isFocus ? 'OK' : '' }}</td>
                 <td class="text-right"><a class="btn btn-outline-primary"
                                           href="{{ path('admin_animal_edit', {'id':animal.id}) }}">Editer</a></td>
             </tr>

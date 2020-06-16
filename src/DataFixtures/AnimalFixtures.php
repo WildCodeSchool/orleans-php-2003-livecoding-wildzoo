@@ -19,6 +19,7 @@ class AnimalFixtures extends Fixture
         foreach (self::ANIMALS as $animalName) {
             $animal = new Animal();
             $animal->setName($animalName);
+            $animal->setIsFocus($faker->boolean);
             $animal->setDescription($faker->paragraph());
             $manager->persist($animal);
         }
