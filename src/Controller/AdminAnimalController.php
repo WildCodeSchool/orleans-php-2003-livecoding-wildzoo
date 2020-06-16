@@ -40,7 +40,7 @@ class AdminAnimalController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($animal);
             $entityManager->flush();
-
+            $this->addFlash('success', 'L\'animal a été ajouté');
             return $this->redirectToRoute('admin_animal_index');
         }
 
@@ -59,6 +59,8 @@ class AdminAnimalController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
+
+            $this->addFlash('success', 'La modification de l\'animal est un succès');
             return $this->redirectToRoute('admin_animal_index');
         }
 
@@ -74,6 +76,7 @@ class AdminAnimalController extends AbstractController
     public function delete(Animal $animal, EntityManagerInterface $entityManager): Response
     {
         $entityManager->remove($animal);
+        $this->addFlash('success', 'La suppression de l\'animal est un succès');
         $entityManager->flush();
 
         return $this->redirectToRoute('admin_animal_index');

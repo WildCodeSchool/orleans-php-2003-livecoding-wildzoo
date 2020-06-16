@@ -14,6 +14,8 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  */
 class Animal
 {
+
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
