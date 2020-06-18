@@ -65,6 +65,11 @@ class Activity
      */
     private $updatedAt;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isFocus;
+
 
     public function getId(): ?int
     {
@@ -128,5 +133,26 @@ class Activity
     public function setImageName(?string $imageName): void
     {
         $this->imageName = $imageName;
+    }
+
+    /**
+     * @param \DateTimeInterface|null $updatedAt
+     */
+    public function setUpdatedAt(?\DateTimeInterface $updatedAt): void
+    {
+        $this->updatedAt = $updatedAt;
+    }
+
+
+    public function getIsFocus(): ?bool
+    {
+        return $this->isFocus;
+    }
+
+    public function setIsFocus(bool $isFocus): self
+    {
+        $this->isFocus = $isFocus;
+
+        return $this;
     }
 }

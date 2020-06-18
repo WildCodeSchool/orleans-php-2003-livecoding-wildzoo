@@ -51,7 +51,7 @@ class Animal
     private $imageFile;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      *
      * @var string|null
      */
@@ -63,6 +63,8 @@ class Animal
      * @var \DateTimeInterface|null
      */
     private $updatedAt;
+
+
 
     /**
      * @ORM\ManyToOne(targetEntity=Area::class, inversedBy="animals")
@@ -148,6 +150,14 @@ class Animal
     public function setImageName(?string $imageName): void
     {
         $this->imageName = $imageName;
+    }
+
+    /**
+     * @param \DateTimeInterface|null $updatedAt
+     */
+    public function setUpdatedAt(?\DateTimeInterface $updatedAt): void
+    {
+        $this->updatedAt = $updatedAt;
     }
 
     public function getIsFocus(): ?bool

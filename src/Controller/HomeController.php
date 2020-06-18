@@ -15,7 +15,7 @@ class HomeController extends AbstractController
     public function index(AnimalRepository $animalRepository, ActivityRepository $activityRepository)
     {
         $animals = $animalRepository->findBy(['isFocus'=>true], ['name'=>'ASC'], 3);
-        $activities = $activityRepository->findBy([], [], 3);
+        $activities = $activityRepository->findBy(['isFocus'=>true], ['name'=>'ASC'], 3);
 
         return $this->render('home/index.html.twig', [
             'animals' => $animals,

@@ -43,6 +43,7 @@ class AnimalType extends AbstractType
             ->add('isFocus', CheckboxType::class, [
                 'label' => 'Mettre en avant',
                 'help'  => 'Affiche cet animal sur la page d\'accueil',
+                'required' => false,
             ]);
     }
 

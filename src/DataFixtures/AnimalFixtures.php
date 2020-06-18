@@ -6,6 +6,7 @@ use App\Entity\Animal;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
+use DateTimeImmutable;
 
 class AnimalFixtures extends Fixture
 {
@@ -21,6 +22,7 @@ class AnimalFixtures extends Fixture
             $animal->setName($animalName);
             $animal->setIsFocus($faker->boolean);
             $animal->setDescription($faker->paragraph());
+            $animal->setUpdatedAt(new DateTimeImmutable());
             $manager->persist($animal);
         }
 

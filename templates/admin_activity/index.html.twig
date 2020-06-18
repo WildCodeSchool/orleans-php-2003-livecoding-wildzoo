@@ -12,6 +12,7 @@
         <thead class="table-primary text-light">
         <tr>
             <th>Activity</th>
+            <th>En avant</th>
             <th></th>
         </tr>
         </thead>
@@ -19,6 +20,7 @@
         {% for activity in activities %}
             <tr>
                 <td>{{ activity.name }}</td>
+                <td>{{ activity.isFocus ? 'OK' }}</td>
                 <td class="text-right">
                     <a class="btn btn-outline-primary" href="{{ path('admin_activity_edit', {'id': activity.id}) }}">edit</a>
                 </td>

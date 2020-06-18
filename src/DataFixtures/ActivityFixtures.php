@@ -6,6 +6,7 @@ use App\Entity\Activity;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
+use DateTimeImmutable;
 
 class ActivityFixtures extends Fixture
 {
@@ -18,6 +19,8 @@ class ActivityFixtures extends Fixture
             $manager->persist($activity);
             $activity->setName($faker->sentence(3));
             $activity->setDescription($faker->realText());
+            $activity->setIsFocus($faker->boolean());
+            $activity->setUpdatedAt(new DateTimeImmutable());
         }
 
         $manager->flush();
