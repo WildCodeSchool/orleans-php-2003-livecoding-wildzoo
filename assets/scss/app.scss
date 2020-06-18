@@ -26,3 +26,19 @@ a {
     height: $navbar-height;
     background-color: $dark;
 }
+
+.vich-image {
+    display: flex;
+    flex-direction: column;
+    a {
+        margin-top: 1em;
+        width: 150px;
+        order:1;
+       img {
+            width:100%
+        }
+    }
+    .form-group {
+        order:2;
+    }
+}

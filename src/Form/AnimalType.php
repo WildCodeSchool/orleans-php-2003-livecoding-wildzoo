@@ -32,9 +32,15 @@ class AnimalType extends AbstractType
             ])
             ->add('imageFile', VichImageType::class, [
                 'help'=>'Fichier jpeg ou png de 2M max',
-                'required' => false
+                'required' => false,
+                'download_uri' => false,
+                'label' => 'Image'
+                ])
+
+            ->add('isFocus', CheckboxType::class, [
+                'label' => 'Mettre en avant',
+                'help' => 'Affiche cet animal sur la page d\'accueil',
             ])
-            ->add('isFocus', CheckboxType::class)
         ;
     }
 

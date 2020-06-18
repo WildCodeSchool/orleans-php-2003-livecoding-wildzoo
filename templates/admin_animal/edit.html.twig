@@ -16,9 +16,12 @@
     {{ form_row(form.description) }}
 
     {{ form_row(form.area) }}
-    {{ form_row(form.isFocus) }}
 
-    {{ form_row(form.imageFile) }}
+    <div class="card p-3 my-2">
+        {{ form_row(form.imageFile) }}
+    </div>
+
+    {{ form_row(form.isFocus) }}
 
     <button class="btn btn-primary">Editer</button>
     {{ form_end(form) }}

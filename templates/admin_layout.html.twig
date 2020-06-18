@@ -8,8 +8,8 @@
 {% block main %}
     <main class="d-flex justify-content-between">
         {% include 'includes/_navbar_admin.html.twig' %}
-        {% block flash %}{{ parent() }}{% endblock %}
         <div class="flex-grow-1 px-5 py-3">
+            {% block flash %}{{ parent() }}{% endblock %}
             {% block body %}
             {% endblock %}
         </div>
