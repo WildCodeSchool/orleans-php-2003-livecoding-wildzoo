@@ -15,6 +15,8 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 class Animal
 {
 
+    const MIME_TYPES = ["image/png", "image/jpeg"];
+    const MAX_SIZE = "1M";
 
     /**
      * @ORM\Id()
@@ -41,8 +43,8 @@ class Animal
      *
      * @Vich\UploadableField(mapping="animal_image", fileNameProperty="imageName")
      * @Assert\File(
-     *     maxSize="1M",
-     *     mimeTypes={"image/png", "image/jpeg"}
+     *     maxSize=Animal::MAX_SIZE,
+     *     mimeTypes=Animal::MIME_TYPES
      * )
      * @var File|null
      */

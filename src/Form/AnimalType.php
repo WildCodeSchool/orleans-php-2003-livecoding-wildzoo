@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Activity;
 use App\Entity\Animal;
 use App\Entity\Area;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -21,27 +22,28 @@ class AnimalType extends AbstractType
             ->add('name', TextType::class, [
                 'attr' => [
                     'placeholder' => 'Pangolin',
-                ]
+                ],
             ])
             ->add('description', TextareaType::class)
             ->add('area', EntityType::class, [
-                'class' => Area::class,
+                'class'        => Area::class,
                 'choice_label' => 'name',
-                'label' => 'Zone',
-                'required' => false,
+                'label'        => 'Zone',
+                'required'     => false,
             ])
             ->add('imageFile', VichImageType::class, [
-                'help'=>'Fichier jpeg ou png de 2M max',
-                'required' => false,
+                'help'         =>
+                    'Les fichiers autorisés sont uniquement de type '
+                    . implode(', ', Animal::MIME_TYPES)
+                    . ' et le poids maximal de ' . Animal::MAX_SIZE,
+                'required'     => false,
                 'download_uri' => false,
-                'label' => 'Image'
-                ])
-
+                'label'        => 'Image',
+            ])
             ->add('isFocus', CheckboxType::class, [
                 'label' => 'Mettre en avant',
-                'help' => 'Affiche cet animal sur la page d\'accueil',
-            ])
-        ;
+                'help'  => 'Affiche cet animal sur la page d\'accueil',
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
