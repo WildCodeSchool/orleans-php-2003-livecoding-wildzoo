@@ -1,4 +1,5 @@
 {% extends 'layout.html.twig' %}
+{% form_theme form 'bootstrap_4_horizontal_layout.html.twig' %}
 
 {% block title %}Wild Zoo | Nos animaux{% endblock %}
 {% block stylesheets %}
@@ -9,6 +10,22 @@
 {% block body %}
     <main class="container-fluid animals">
         <h1 class="my-4">Nos animaux</h1>
+        <div class="jumbotron py-2 pb-0 ">
+            {{ form_start(form) }}
+            <div class="form-row ">
+                <div class="col">
+                    {{ form_label(form.animalSearch) }}
+                    <div class="autocomplete-input d-inline-block">
+                        {{ form_widget(form.animalSearch) }}
+                        <div id="animal_results" class="autocomplete"></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary">Rechercher</button>
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
         <div class="row">
             {% for animal in animals %}
                 {% include 'animal/_card.html.twig' %}
@@ -16,4 +33,8 @@
         </div>
         <a class="btn btn-outline-primary" href="{{ path('home') }}">Retour</a>
     </main>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('animalAutocomplete') }}
 {% endblock %}

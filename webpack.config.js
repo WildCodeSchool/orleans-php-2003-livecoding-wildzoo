@@ -29,6 +29,7 @@ Encore
      * and one CSS file (e.g. app.css) if you JavaScript imports CSS.
      */
     .addEntry('app', './assets/js/app.js')
+    .addEntry('animalAutocomplete', './assets/js/animalAutocomplete.js')
     .addStyleEntry('home', './assets/scss/home.scss')
     .addStyleEntry('animal', './assets/scss/animal.scss')
     .addStyleEntry('animals', './assets/scss/animals.scss')

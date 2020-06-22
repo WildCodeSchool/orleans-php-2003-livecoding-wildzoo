@@ -18,4 +18,13 @@ class AnimalRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Animal::class);
     }
+
+    public function animalSearchLike(?string $input)
+    {
+        return $this->createQueryBuilder('a')
+            ->where('a.name LIKE :input')
+            ->setParameter('input', $input.'%')
+            ->getQuery()
+            ->getResult();
+    }
 }
