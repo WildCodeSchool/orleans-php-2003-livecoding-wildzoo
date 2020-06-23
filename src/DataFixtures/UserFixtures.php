@@ -41,6 +41,14 @@ class UserFixtures extends Fixture
         $admin->setRoles(['ROLE_ADMIN']);
         $manager->persist($admin);
 
+        $superAdmin = new User();
+        $superAdmin->setFirstname('Bilbo');
+        $superAdmin->setLastname('Baggins');
+        $superAdmin->setEmail('superadmin@wildzoo.com');
+        $superAdmin->setPassword($this->passwordEncoder->encodePassword($superAdmin, 'sauron'));
+        $superAdmin->setRoles(['ROLE_SUPER_ADMIN']);
+        $manager->persist($superAdmin);
+
         $manager->flush();
     }
 }
