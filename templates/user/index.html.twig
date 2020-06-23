@@ -1,0 +1,28 @@
+{% extends 'admin_layout.html.twig' %}
+
+{% block title %}Wild Zoo Admin | Index Inscrits{% endblock %}
+
+{% block body %}
+    <div class="d-flex justify-content-between">
+        <h1>Administrer les inscrits</h1>
+    </div>
+
+    <table class="mt-5 table table-hover ">
+        <thead class="table-primary text-light">
+        <tr>
+            <th>Nom</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.lastname }} {{ user.firstname }}</td>
+                <td>{{ user.email }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
+
