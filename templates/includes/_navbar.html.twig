@@ -13,6 +13,20 @@
             <a class="nav-item nav-link" href="{{ path('activity_index')}}">Les activités</a>
             <a class="nav-item nav-link" href="#">Informations pratiques</a>
             <a class="btn btn-primary nav-item nav-link" href="#">Acheter un billet</a>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ app.user.firstname }} {{ app.user.lastname }}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="/logout">Deconnexion</a>
+                    </div>
+                </div>
+
+            {% else %}
+                <a class="btn btn-secondary nav-item nav-link" href="/login">Connexion</a>
+            {% endif %}
         </div>
     </div>
 </nav>
