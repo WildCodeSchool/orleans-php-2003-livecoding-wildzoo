@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link href="{{ absolute_url(asset('build/app.css')) }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <main class="controller">
+        <h1 class="title">Mon ticket</h1>
+        <p class="text-primary">Pour : {{ booking.user.firstname }} {{ booking.user.lastname }}</p>
+        <p>Date : {{ booking.date|date('d/m/Y') }}</p>
+        <p>Nombre de personnes : {{ booking.number }}</p>
+        <p>Total : {{ total }}</p>
+    </main>
+{% endblock %}

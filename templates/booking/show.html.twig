@@ -1,0 +1,38 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Mes réservations{% endblock %}
+
+{% block body %}
+    <main class="container">
+        <h1>Mes réservation</h1>
+
+        <table class="table">
+            <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ booking.id }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ booking.date ? booking.date|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Number</th>
+                <td>{{ booking.number }}</td>
+            </tr>
+            <tfoot>
+                <tr>
+                    <th>Total</th>
+                    <td>{{ total }}</td>
+                </tr>
+            </tfoot>
+            </tbody>
+        </table>
+
+        <a href="{{ path('booking_index') }}">back to list</a>
+
+        <a href="{{ path('booking_edit', {'id': booking.id}) }}">edit</a>
+
+        {{ include('booking/_delete_form.html.twig') }}
+    </main>
+{% endblock %}

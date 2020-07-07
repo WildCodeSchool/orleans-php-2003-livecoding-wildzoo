@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Mes réservations{% endblock %}
+
+{% block body %}
+    <main class="my-5 container">
+    <h1>Mes réservations</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Number</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for booking in bookings %}
+            <tr>
+                <td>
+                    <a class="btn btn-outline-primary" href="{{ path('booking_show', {'id': booking.id}) }}">Detail</a>
+                </td>
+                <td>{{ booking.date ? booking.date|date('Y-m-d') : '' }}</td>
+                <td>{{ booking.number }}</td>
+                <td>
+                    <a class="btn btn-primary" href="{{ path('booking_ticket', {'id': booking.id}) }}">Ticket en PDF</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        <a href="{{ path('booking_new') }}">Create new</a>
+    </main>
+{% endblock %}

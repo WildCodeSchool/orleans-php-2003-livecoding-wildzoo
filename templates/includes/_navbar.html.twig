@@ -12,7 +12,7 @@
             <a class="nav-item nav-link" href="{{ path('animal_index')}}">Les animaux</a>
             <a class="nav-item nav-link" href="{{ path('activity_index')}}">Les activités</a>
             <a class="nav-item nav-link" href="#">Informations pratiques</a>
-            <a class="btn btn-primary nav-item nav-link" href="#">Acheter un billet</a>
+            <a class="btn btn-primary nav-item nav-link" href="{{ path('booking_new')}}">Acheter un billet</a>
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
